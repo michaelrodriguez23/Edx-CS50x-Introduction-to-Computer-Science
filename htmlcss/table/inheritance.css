@@ -1,0 +1,23 @@
+.fail, .error, .success {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+  background-color: purple;
+}
+
+.success {
+  background-color: green;
+}
+
+.error {
+  background-color: red;
+}
+
+.fail {
+  background-color: yellow;
+}
+
+/*# sourceMappingURL=inheritance.css.map */

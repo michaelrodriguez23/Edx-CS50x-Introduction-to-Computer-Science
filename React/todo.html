@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <title> Todo</title>
+    </head>
+</html>
+<body>
+    <div id="app">
+        <script type="text/babel"> 
+       
+
+   
+
+
+
+    class App extends React.Component {
+         
+        constructor(props){
+            super(props);
+                this.state = {
+                    tasks :["Thing One", "Thing Two" , "Thing Three"], 
+                    input : "", 
+                    completed : false
+                }
+            }
+        
+
+        render(){
+            return(
+                <div> 
+                    <h1> Tasks </h1> 
+                    <h4> Current tasks count {this.state.tasks.length} </h4>
+                        <ul> {this.state.tasks.map((task,index) => 
+                            <li key={index}> {task} 
+                                <input onChange={this.handleCheck} type="checkbox" id={task} name={task} checked={this.state.completed}/>
+                                <button data-index={index} onClick={this.handleDelete}>delete</button>
+                             
+                                 </li> ) }
+                            </ul>
+                            <input onChange={this.handleChange}  onKeyPress={this.keyPressed}value={this.state.input}/>
+                            <button onClick={this.addTask}> Add Task </button> 
+                            <button onClick={this.removeTasks}> Remove Completed </button> 
+                 
+                </div>
+            )
+        }
+
+        handleDelete = (event) => {
+           
+            const index = event.target.dataset.index; 
+            this.setState(state => {
+                const tasks = [... state.tasks]
+                tasks.splice(index,1);
+
+               return {
+                   tasks: tasks
+               };
+             })
+            }
+    
+        handleCheck = (event) => {
+            let checked = event.target.checked;
+            console.log(checked)
+            this.setState(state =>({
+                completed : this.checked
+            }))
+        }
+        handleChange = (event) => {
+            let val = event.target.value;
+            this.setState({
+                input: val
+            });
+
+        }
+        addTask = () => {
+            this.setState(state => ({
+                tasks: [...state.tasks, state.input],
+                input: "" 
+
+            }))
+        }
+        keyPressed = (event) => {
+            if(event.key === "Enter"){
+                this.setState(state => ({
+                tasks: [...state.tasks, state.input],
+                input: "" 
+
+            }))
+            }
+        }
+    }
+
+        ReactDOM.render( <App />, document.querySelector("#app"))
+    </script>
+    </div>
+</body>
+</html>

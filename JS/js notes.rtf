@@ -1,0 +1,139 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red244\green244\blue241;\red30\green31\blue41;\red86\green232\blue113;
+\red215\green224\blue128;\red226\green237\blue134;\red236\green108\blue183;\red253\green170\blue90;\red176\green136\blue234;
+}
+{\*\expandedcolortbl;;\cssrgb\c96471\c96471\c95686;\cssrgb\c15686\c16471\c21176;\cssrgb\c38431\c90980\c51765;
+\cssrgb\c87059\c89412\c57255;\cssrgb\c90588\c93333\c59608;\cssrgb\c94902\c52549\c76863;\cssrgb\c100000\c72157\c42353;\cssrgb\c74902\c61961\c93333;
+}
+\margl1440\margr1440\vieww25100\viewh15140\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+Javascript to the webpage\
+\
+All it takes its adding some script tags to the browsers. \
+\
+<script> alert(\'91Hello World\'92)<script>\
+\
+Javascript can be powerful when working with event driven \
+programming. \
+\
+When an event happens -> Do this\
+\
+Event listeners . \
+\
+To call functions in tags for example buttons\
+We can add attributes to the button like onClick=\'93 \'94\
+\
+Inside the attributes we can add the function that we want to \
+Call \
+e.g onClick=\'93hello()\'94\
+\
+\
+If we want to add dynamic code to the page using variables\
+We can use document.querySelector(\'91h1\'92) \
+\
+This will effect the first element that is on the webpage, \
+It extracts the element and modifies that element. \
+\
+Look through this document, and try to find an h1 element , \
+If you do lets manipulate it\
+\
+To update any property of an object us . \
+\
+.innerHTML is a property \
+\
+Template literals in JS\
+\
+`the counter is $\{counter\}`\
+\
+\
+Ideally we like to decouple the html with the javascript\
+\
+document.querySelector(\'91\'92).onClick(\
+\
+\
+QuerySelector will return null if it can\'92t find the element\
+\
+So what happens is that JS will load first in on the top, then run \
+To the bottom of the html . \
+\
+So by the time the script will run the html still hasn\'92t load \
+\
+\
+A fix to that is using an Event listener\
+document.eventListerner(\'91DOMContentLoaded\'92, function() \{\
+\}; ) \
+\
+We are waiting for the Dom to be fully loaded
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+There is valuable in separating our JS from our html\
+\
+Autofocus is having the input field automatically snap to input\
+\
+If there are more than one element we can be more specific and use\
+querySelector like how we use CSS\
+\
+document.querySelector(\'91tag\'92)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 document.querySelector(\'91#id\'92)\
+document.querySelector(\'91.class\'92)\
+\
+\
+We can also change css using querySelectors\
+\
+\
+Data attributes allow us to send data to the js \
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 document.\cf4 \strokec4 querySelectorAl\cf2 \cb1 \strokec2 l \
+Gives us an array of all the elements in that\
+Elector\
+\
+For Each is a function that accept \
+\
+\
+\
+\
+\cb3         document.\cf4 \strokec4 addEventListener\cf2 \strokec2 (\cf5 \strokec5 '\cf6 \strokec6 DOMContentLoaded\cf5 \strokec5 '\cf2 \strokec2 , \cf7 \strokec7 function\cf2 \strokec2 ()\{\cb1 \
+\
+\cb3             document.\cf4 \strokec4 querySelectorAll\cf2 \strokec2 (\cf5 \strokec5 '\cf6 \strokec6 button\cf5 \strokec5 '\cf2 \strokec2 ).\cf4 \strokec4 forEach\cf2 \strokec2 (
+\f2\i \cf8 \strokec8 button
+\f1\i0 \cf2 \strokec2  \cf7 \strokec7 =>\cf2 \strokec2   \{\cb1 \
+\cb3                 
+\f2\i \cf8 \strokec8 button
+\f1\i0 \cf2 \strokec2 .onclick \cf7 \strokec7 =\cf2 \strokec2  \cf7 \strokec7 function\cf2 \strokec2 () \{\cb1 \
+\cb3                     document.\cf4 \strokec4 querySelector\cf2 \strokec2 (\cf5 \strokec5 '\cf6 \strokec6 #hello\cf5 \strokec5 '\cf2 \strokec2 ).style.color \cf7 \strokec7 =\cf2 \strokec2  
+\f2\i \cf8 \strokec8 button
+\f1\i0 \cf2 \strokec2 .\cf9 \strokec9 dataset\cf2 \strokec2 .color;\cb1 \
+\cb3                     document.\cf4 \strokec4 querySelector\cf2 \strokec2 (\cf5 \strokec5 '\cf6 \strokec6 #hello\cf5 \strokec5 '\cf2 \strokec2 ).innerHTML \cf7 \strokec7 =\cf2 \strokec2  
+\f2\i \cf8 \strokec8 button
+\f1\i0 \cf2 \strokec2 .\cf9 \strokec9 dataset\cf2 \strokec2 .color;\cb1 \
+\
+\cb3                 \}\cb1 \
+\cb3             \});\cb1 \
+\cb3         \})\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb1 \
+\
+This is a special keyword to what is received in the event\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+}

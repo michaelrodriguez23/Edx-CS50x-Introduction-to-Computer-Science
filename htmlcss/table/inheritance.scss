@@ -1,0 +1,22 @@
+%message{ 
+font-family: 'Courier New', Courier, monospace;
+font-size: 18px;
+font-weight: bold;
+border: 1px solid black;
+padding:20px;
+margin:20px;
+background-color: purple;
+}
+
+.success {
+    @extend %message; 
+    background-color: green;
+}
+.error {
+    @extend %message; 
+    background-color: red;
+}
+.fail {
+    @extend %message; 
+    background-color: yellow;
+}

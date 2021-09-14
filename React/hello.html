@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>  
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <title> Hello</title>
+    </head>
+</html>
+<body>
+    <div id="app">
+        <script type="text/babel"> 
+        
+        class Hello extends React.Component {
+            render(){
+                return (
+                    <div>
+                        <h1>Hello!</h1>
+                        <button onClick= {this.handleClick}>Click Here</button>
+                    </div>
+                )
+        }
+        handleClick = () => {
+            alert('Hi')
+        }
+      
+    }
+
+
+    class Counter extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+        count: 0
+        };
+
+   }
+
+
+
+    render(){
+        return(
+            <div>
+                <h1> Counter </h1> 
+                <Button counter={this.addCounter}> Add </Button> 
+            </div>
+        )
+    }
+    addCounter = () => {
+        let count = 0 ;
+
+
+    }
+  
+
+   
+
+
+
+    class App extends React.Component {
+        render(){
+            return(
+                <div> 
+                <Add/>     
+                 
+                </div>
+            )
+        }
+    }
+
+        ReactDOM.render( <App />, document.querySelector("#app"))
+    </script>
+    </div>
+</body>
+</html>
