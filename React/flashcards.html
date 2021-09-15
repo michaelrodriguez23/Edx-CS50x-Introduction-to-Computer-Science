@@ -86,6 +86,7 @@
             const index = event.target.dataset.index; 
              this.props.deleteCard(index);
           }
+          
     }
 
       class CardViewer extends React.Component {
@@ -98,7 +99,6 @@
                   onFront : true
             }
 
-
           }
   
           render(props){
@@ -107,7 +107,7 @@
                   <div> 
                     <h2>Cards</h2>
                     <br/>
-                        <div role="button" onClick={this.handleClick}> {this.state.onFront ? "front" : 'back' }</div>
+                        <div role="button" onClick={this.handleClick}> {this.state.onFront ? this.state.front : 'back' }</div>
                    
                     <hr/> 
                     <button onClick={this.props.switchMode}> switch to editor </button> 
@@ -122,12 +122,9 @@
                   cards : state.cards, 
               }))
            
-           
-
           }
           getCard = () => {
-              this.props.getCard(this.state.front, this.state.back);
-
+              const card = this.props.getCard(this.state.index, this.state.front, this.state.back);
           }
       }
 
@@ -184,7 +181,7 @@
     }
     getCard = (front, back, index) => {
         this.setState(state => {
-            const cards = [...state.cards];
+            const cards = [...state.cards,{front: front, back : back}];
             return cards.splice(index,1);
         })
 
